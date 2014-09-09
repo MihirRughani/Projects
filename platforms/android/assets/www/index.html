@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Database Application</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+        
+            document.addEventListener("deviceready", OnDeviceReady, false);
+            
+            function OnDeviceReady() {
+           	navigator.splashscreen.show();
+           	var database = window.openDatabase("StudentDB", "1.0", "Student database", 200000);
+            database.transaction(CreateDB, errorDB, successDB); 
+            }
+            function CreateDB(tx) {
+            tx.executeSql("CREATE TABLE IF NOT EXISTS Student(RollNo INTEGER, FirstName text,LastName text,Address text,City text)");
+            }
+            
+            function errorDB(err) {
+            navigator.notification.alert("Error: " +err,null,"Got an error", "OK");     
+            }
+            
+            function successDB() {
+            navigator.notification.alert("Database is Ready",null,"Information","OK");
+          
+            }
+            function RegisterStudent(){
+            var database = window.openDatabase("StudentDB", "1.0", "Student database", 200000);
+            database.transaction(InsertStudent, errorDB, successInsert); 
+            }
+            
+            function InsertStudent(tx){
+            var RollNo= document.getElementById("txtRollNo").value;
+            var FirstName = document.getElementById("txtFirstName").value;
+            var LastName= document.getElementById("txtLastName").value;
+            var Address = document.getElementById("txtAddress").value;
+            var City = document.getElementById("txtCity").value;
+            
+            tx.executeSql("Insert into Student (RollNo, FirstName, LastName, Address, City) values (" + RollNo + ",'"+ FirstName +"','"+ LastName +"','"+ Address +"','"+ City +"')");   
+            }
+            
+            function successInsert(){
+            navigator.notification.alert("Student is Registered Successfully",null,"Information","OK");
+            }
+         
+            function UpdateStudent(){
+            var database = window.openDatabase("StudentDB", "1.0", "Student database", 200000);
+            database.transaction(UpdateDB, errorDB, UpdateSuccess); 
+            }
+            
+            function UpdateDB(tx)
+            {
+            var RollNo= document.getElementById("txtRollNo").value;
+            var FirstName = document.getElementById("txtFirstName").value;
+            var LastName= document.getElementById("txtLastName").value;
+            var Address = document.getElementById("txtAddress").value;
+            var City = document.getElementById("txtCity").value;
+       
+            tx.executeSql("UPDATE Student Set FirstName='"+ FirstName +"', LastName= '"+ LastName +"',Address='"+ Address +"', City='"+ City +"' Where RollNo="+ RollNo +"");
+            }
+            function UpdateSuccess()
+            {
+            navigator.notification.alert("Student is Updated Successfully",null,"Information","OK");
+            }
+            
+            function DeleteStudent()
+            {
+               var database = window.openDatabase("StudentDB", "1.0", "Student database", 200000);
+               database.transaction(DeleteDB, errorDB, DeleteSuccess);
+            }
+            
+            function DeleteDB(tx)
+            {
+                var RollNo= document.getElementById("txtRollNo").value;
+                tx.executeSql("Delete from Student Where RollNo=" + RollNo);
+            }
+            function DeleteSuccess()
+            {
+               navigator.notification.alert("Record is Deleted Successfully",null,"Information","OK");  
+            }
+               
+   </script>
+    </head>
+    <body>
+        <div>
+        <table align="center" border="1" width="100%">
+            <tr>
+                <th>Roll No:</th>
+                <td>
+                    <input type="text" name="txtRollNo" id="txtRollNo" />
+                </td>
+             </tr>
+             <tr>
+                <th>First Name:</th>
+                <td>
+                    <input type="text" name="txtFirstName" id="txtFirstName" />
+                </td>
+             </tr>
+             <tr>
+                <th>Last Name:</th>
+                <td>
+                    <input type="text" name="txtLastName" id="txtLastName" />
+                </td>
+             </tr>
+             <tr>
+                <th>Address:</th>
+                <td>
+                    <input type="text" name="txtAddress" id="txtAddress" />
+                </td>
+             </tr>
+             <tr>
+                <th>City:</th>
+                <td>
+                    <input type="text" name="txtCity" id="txtCity" />
+                </td>
+             </tr>
+             <tr>
+             	<th>
+                  <input type ="button" value="Register" id="btnInsert" onclick="RegisterStudent();"/>
+             </th>
+             	<td>
+             		<input type ="button" id="btnUpdate" value="Update Student" onclick="UpdateStudent();"/>
+             		<input type ="button" id="btnDelete" value="Delete Student" onclick="DeleteStudent();"/>
+                </td>
+             </tr>
+        </table>
+        
+        </div>
+        
+    </body>
+</html>

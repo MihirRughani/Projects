@@ -1,0 +1,27 @@
+C:\Database3\platforms\android\ant-build\classes.dex : \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1$2.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$2.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$3.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$4.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$3$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$3$2.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$3$3.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$3$4.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$3.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$4$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$4.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$5$1.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$5.class \
+C:\Database3\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\BuildConfig.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\Database3.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\R$attr.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\R$drawable.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\R$string.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\R$xml.class \
+C:\Database3\platforms\android\ant-build\classes\web\connect\R.class \
+C:\Database3\platforms\android\ant-build\dexedLibs\classes-f80f8f1de13e81cc9e1be0b539e108ef.jar \
